@@ -15,6 +15,7 @@ const LiveLocation = () => {
         navigator.geolocation.getCurrentPosition(position => {
           setLat(position.coords.latitude)
           setLong(position.coords.longitude)
+          console.log(position)
         })
       } else {
         setMsg('กรุณาเปิดโลเคชั่นบนอุปกรณ์ของท่าน')
@@ -29,11 +30,8 @@ const LiveLocation = () => {
         <h3>Get Geolocation</h3>
         <div>{msg && <h2>{msg}</h2>}</div>
         <div>
-          {lat && long && (
-            <>
-              Lat: {lat} , Long: {long}
-            </>
-          )}
+          {lat && <>Lat: {lat}</>}
+          {long && <>Long: {long}</>}
         </div>
         <div>
           <button onClick={getGeoLocation} style={{ width: '100%' }}>
