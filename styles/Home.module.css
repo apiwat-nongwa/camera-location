@@ -19,6 +19,7 @@
   border: 1px solid blue;
 }
 .location{
+  margin-top: 30px;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
