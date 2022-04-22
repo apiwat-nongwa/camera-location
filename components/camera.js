@@ -6,7 +6,7 @@ const LiveCamera = () => {
   const [imgSrc, setImgSrc] = useState(null)
   const [msg, setMsg] = useState('')
   const videoConstraints = {
-    facingMode: 'user',
+    facingMode: { exact: 'environment' },
   }
 
   const capture = useCallback(() => {
