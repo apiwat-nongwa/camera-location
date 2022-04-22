@@ -29,8 +29,7 @@ const LiveLocation = () => {
         <h3 style={{ textAlign: 'center' }}>Get Geolocation</h3>
         <div>{msg && <h2>{msg}</h2>}</div>
         <div>
-          {lat && <>Lat: {lat}</>}
-          {long && <>Long: {long}</>}
+          {lat && <>Lat: {lat}</>} {long && <>Long: {long}</>}
         </div>
         <div>
           <button onClick={getGeoLocation} style={{ width: '100%' }}>

@@ -15,7 +15,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1>Camera & Location</h1>
-        <div style={{ display: 'block', margin: '0 auto' }}>
+        <div>
           <div className={styles.camera}>
             <LiveCamera />
           </div>
