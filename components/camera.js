@@ -1,12 +1,13 @@
 import Webcam from 'react-webcam'
 import { useState, useRef, useCallback } from 'react'
+import Image from 'next/image'
 
 const LiveCamera = () => {
   const webcamRef = useRef(null)
   const [imgSrc, setImgSrc] = useState(null)
   const [msg, setMsg] = useState('')
   const videoConstraints = {
-    facingMode: { exact: 'environment' },
+    facingMode: 'user',
   }
 
   const capture = useCallback(() => {
@@ -31,7 +32,7 @@ const LiveCamera = () => {
         videoConstraints={videoConstraints}
       />
       <button onClick={capture}>Capture photo</button>
-      {imgSrc && <img src={imgSrc} alt="Capture Image" />}
+      {imgSrc && <Image src={imgSrc} alt="Capture Image" layout="fill" />}
     </>
   )
 }

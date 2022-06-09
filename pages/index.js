@@ -1,7 +1,5 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import LiveCamera from '../components/camera'
-import LiveLocation from '../components/location'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -19,9 +17,7 @@ export default function Home() {
           <div className={styles.camera}>
             <LiveCamera />
           </div>
-          <div className={styles.location}>
-            <LiveLocation />
-          </div>
+          
         </div>
       </main>
     </div>
