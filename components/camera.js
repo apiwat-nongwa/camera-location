@@ -6,8 +6,9 @@ const LiveCamera = () => {
   const webcamRef = useRef(null)
   const [imgSrc, setImgSrc] = useState(null)
   const [msg, setMsg] = useState('')
+  const [cameraMode,setCameraMode] = useState('user')
   const videoConstraints = {
-    facingMode: 'user',
+    facingMode: cameraMode,
   }
 
   const capture = useCallback(() => {
@@ -23,6 +24,9 @@ const LiveCamera = () => {
     <>
       {msg && <h2>{msg}</h2>}
       <h3 style={{ textAlign: 'center' }}>Camera</h3>
+      <button onClick={() => {
+        setCameraMode(cameraMode === 'user' ? 'environment' : 'user')
+      }}>เปลี่ยนกล้อง</button>
       <Webcam
         audio={false}
         height={350}
